@@ -19,9 +19,11 @@ BUILD SUCCESSFUL in 6s
 
 ### 2. Running the jar file 
 Now, we can run the jar file created under build\libs
+
 ````C:\projects\assessment\PokerHandSorter>java -jar build\libs\PokerHandSorter-1.0-SNAPSHOT.jar````
 
-### 2.Running the testcases
+### 3. Running the testcases
+
 ````C:\projects\assessment\PokerHandSorter>gradlew test````
 
 ## Console Output
