@@ -2,7 +2,8 @@
 
 ## Instructions on how to build and execute the project 
 
-### 1. Go to the project folder
+### 1. Building the project 
+Go to the project folder
 ````
 C:\projects\assessment\PokerHandSorter>gradlew clean build
 
@@ -16,8 +17,12 @@ BUILD SUCCESSFUL in 6s
 
 **Once build is successful a jar file in creaded in build\libs\**
 
-### 2. Now, we can run the jar file created under build\libs
+### 2. Running the jar file 
+Now, we can run the jar file created under build\libs
 ````C:\projects\assessment\PokerHandSorter>java -jar build\libs\PokerHandSorter-1.0-SNAPSHOT.jar````
+
+### 2.Running the testcases
+````C:\projects\assessment\PokerHandSorter>gradlew test````
 
 ## Console Output
 ````
