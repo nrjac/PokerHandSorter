@@ -1,6 +1,41 @@
 # PokerHandSorter
 
-## Poker Hand Sorter
+## Instructions on how to build and execute the project 
+
+### 1. Go to the project folder
+````
+C:\projects\assessment\PokerHandSorter>gradlew clean build
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.1.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 6s
+6 actionable tasks: 6 executed
+````
+
+**Once build is successful a jar file in creaded in build\libs\**
+
+### 2. Now, we can run the jar file created under build\libs
+````C:\projects\assessment\PokerHandSorter>java -jar build\libs\PokerHandSorter-1.0-SNAPSHOT.jar````
+
+## Console Output
+````
+Welcome to poker sorter
+
+Player1:263
+
+Player2:237
+
+File already exists.
+
+Successfully wrote to the file.
+````
+
+**With the execution of this program, a output file generated under resource\output folder**
+
+
+# Poker Hand Sorter
 A poker hand consists of a combination of five playing cards, ranked in the following ascending order (lowest to highest): 
 ### Rank 	Combination 	    Description 
 1. 	High card: 	      Highest value card 
@@ -54,30 +89,3 @@ You will be provided a test file you can use to determine whether your solution 
 Expected output of provided test file 
 Player 1: 263 
 Player 2: 237 
- 
-
-## Instructions on how to build and execute your solution 
-
-### 1. Go to the project folder
-`C:\projects\assessment\PokerHandSorter>gradlew clean build`
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.1.1/userguide/command_line_interface.html#sec:command_line_warnings
-
-BUILD SUCCESSFUL in 6s
-6 actionable tasks: 6 executed
-
-**Once build is successful a jar file in creaded in build\libs\**
-
-### 2. Now, we can run the jar file created under build\libs
-````C:\projects\assessment\PokerHandSorter>java -jar build\libs\PokerHandSorter-1.0-SNAPSHOT.jar````
-
-## Console Output
-``Welcome to poker sorter
-Player1:263
-Player2:237
-File already exists.
-Successfully wrote to the file.``
-
-**With the execution of this program, a output file generated under resource\output folder**
