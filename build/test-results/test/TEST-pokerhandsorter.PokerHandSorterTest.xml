@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pokerhandsorter.PokerHandSorterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-10-26T02:42:39" hostname="DESKTOP-78NNLV3" time="0.087">
+  <properties/>
+  <testcase name="testGetResultFromInputFile" classname="pokerhandsorter.PokerHandSorterTest" time="0.06"/>
+  <testcase name="testWriteToFile" classname="pokerhandsorter.PokerHandSorterTest" time="0.026"/>
+  <system-out><![CDATA[Player1:263
+Player2:237
+Player1:263
+Player2:237
+File already exists.
+Successfully wrote to the file.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
