@@ -28,7 +28,7 @@ public class PokerHandSorterTest {
     @Test
     public void testWriteToFile() throws FileNotFoundException {
         String output = "Player1" +
-                ":275\n" + "Player2:226";
+                ":275\n" + "Player2:225";
         String output2 = PokerHandSorter.getResultFromInputFile();
         PokerHandSorter.writeOutputToFile(output2);
         Scanner inFile = new Scanner(new FileReader("src\\main\\resources\\output\\poker-hands-output.txt"));
