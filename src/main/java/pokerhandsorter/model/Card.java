@@ -52,12 +52,12 @@ public class Card implements Comparable<Card> {
                 this.value = 13;
                 break;
 
-            case 'L':
+            case 'A':
                 this.value = 14;
                 break;
 
             default:
-                this.value = (int) cardString.charAt(0);
+                this.value = Integer.parseInt(cardString.charAt(0)+ "");
                 break;
         }
     }
