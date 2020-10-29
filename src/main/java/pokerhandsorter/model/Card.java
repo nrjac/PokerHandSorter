@@ -71,8 +71,12 @@ public class Card implements Comparable<Card> {
     }
 
     @Override
-    public int compareTo(Card card2) {
-        if( this.getValue() > card2.getValue()) return 1;
-        return 0;
+    public int compareTo(Card card) {
+        if( this.value > card.value){
+            return 1;
+        }
+        else if( this.value < card.value){
+            return -1;
+        } else return 0;
     }
 }

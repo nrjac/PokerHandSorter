@@ -1,2 +1,2 @@
-Player1:268
-Player2:232
+Player1:256
+Player2:244

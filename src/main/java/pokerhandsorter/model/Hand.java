@@ -3,12 +3,10 @@ package pokerhandsorter.model;
 
 import pokerhandsorter.utils.CardOperations;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Hand {
-    private Card[] cards;
+    private Card[] cards = new Card[5];
     private int rank;
 
     public Hand(Card[] cards) {
@@ -50,7 +48,7 @@ public class Hand {
         sortCardsInHand();
 
         // check Royal flush
-        if (this.areCardsInStraight() && this.cards[0].getValue() == 10) return 10;
+        if (this.areCardsInStraight() && this.cards[0].getValue() == 10 && areCardsInSameSuite()) return 10;
 
         // Straight flush: All five cards in consecutive value order, with the same suit
         if (areCardsInSameSuite() && areCardsInStraight()) return 9;
