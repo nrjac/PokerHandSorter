@@ -11,6 +11,7 @@ public class CardOperations {
     public static int numberOfPairs(Map<Integer, Integer> map) {
 
         int pairCount = 0;
+        boolean tripleFlag = false;
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() == 4) {
@@ -18,16 +19,20 @@ public class CardOperations {
             }
 
             if (entry.getValue() == 3) {
-                if (pairCount == 1) {
-                    return 5;
-                } else {
-                    return 3;
-                }
+                tripleFlag = true;
             }
 
 
             if (entry.getValue() == 2) {
                 pairCount++;
+            }
+        }
+
+        if(tripleFlag){
+            if(pairCount == 1) {
+                return 5;
+            } else {
+                return 3;
             }
         }
 

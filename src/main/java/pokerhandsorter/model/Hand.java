@@ -106,7 +106,7 @@ public class Hand {
     public boolean areCardsInSameSuite() {
         Card initialCard = this.cards[0];
         for (int i = 1; i < 5; i++) {
-            if (!this.cards[1].compareSuite(initialCard)) {
+            if (!this.cards[i].compareSuite(initialCard)) {
                 return false;
             }
         }
@@ -154,6 +154,4 @@ public class Hand {
         }
         return map;
     }
-
-
 }
