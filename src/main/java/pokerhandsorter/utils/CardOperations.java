@@ -46,7 +46,7 @@ public class CardOperations {
     public static int compareTwoArrays( int[] values1, int[] values2) {
         for (int i = 4; i >= 0; i--) {
             if ( values1[i] > values2[i]) return 1;
-            if ( values1[i] < values2[i]) return 2;
+            if ( values1[i] < values2[i]) return -1;
         }
         return 0;
     }

@@ -81,25 +81,36 @@ public class Hand {
     }
 
 
-
-     /*Compares ramks of two hands
+    /*Compares ramks of two hands
      * 1: greter
      * 2: smaller
      * 3: same rank
      *
      * */
-    public int compareHandForWinner(Hand hand){
-        if ( this.calcRank() > hand.calcRank()) return 1;
-        if ( this.calcRank() < hand.calcRank()) return -1;
-        int[] values1 = this.getCardValuesInHand();
-        int[] values2 = hand.getCardValuesInHand();
-        int compareInt = CardOperations.compareTwoArrays(values1, values2);
-        if (compareInt == 1) return 1;
-        if (compareInt == 2) return -1;
-        return 0;
+    public int compareHandForWinner(Hand hand) {
+        int thisRank = this.calcRank();
+        int handRank = hand.calcRank();
+        if (thisRank > handRank) return 1;
+        if (thisRank < handRank) return -1;
+
+        if( thisRank == 4 || thisRank == 7){
+            if( getTripleIndex() > hand.getTripleIndex()) return 1;
+            if( getTripleIndex() < hand.getTripleIndex()) return -1;
+        }
+        if( thisRank == 8){
+            if( getSameValueCardOf4Index() > hand.getSameValueCardOf4Index()) return 1;
+            if( getSameValueCardOf4Index() < hand.getSameValueCardOf4Index()) return -1;
+        }
+        if( thisRank == 7 || thisRank == 3 || thisRank == 2){
+            int[] indexOfPair = getPairsIndexArray();
+            int[] indexOfPair2 = hand.getPairsIndexArray();
+            int pairOfIndexValue = indexOfPair[0] * 100 + indexOfPair[1];
+            int pairOfIndexValue2 = indexOfPair2[0] * 100 + indexOfPair2[1];
+            if( pairOfIndexValue > pairOfIndexValue2) return 1;
+            if( pairOfIndexValue < pairOfIndexValue2) return -1;
+        }
+        return CardOperations.compareTwoArrays(getCardValuesInHand(), hand.getCardValuesInHand());
     }
-
-
     // utils methods
     public boolean areCardsInSameSuite() {
         Card initialCard = this.cards[0];
@@ -151,5 +162,40 @@ public class Hand {
             }
         }
         return map;
+    }
+
+    public int getTripleIndex(){
+        int key = 0;
+        Map<Integer, Integer> map = getHashMapOfValues();
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 3) {
+                key = entry.getKey();
+            }
+        }
+        return key;
+    }
+
+    public int getSameValueCardOf4Index(){
+        int key = 0;
+        Map<Integer, Integer> map = getHashMapOfValues();
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 4) {
+                key = entry.getKey();
+            }
+        }
+        return key;
+    }
+
+    public int[] getPairsIndexArray(){
+        int keys[] = { 0, 0 };
+        int indexOfKeys = 0;
+        Map<Integer, Integer> map = getHashMapOfValues();
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 2) {
+                keys[indexOfKeys] = entry.getKey();
+                indexOfKeys++;
+            }
+        }
+        return keys;
     }
 }

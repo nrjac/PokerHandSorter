@@ -11,6 +11,6 @@ public class CardOperationsTest {
         int value1[] = {1, 2, 3, 5, 7};
         int value2[] = {1, 2, 4, 5, 7};
         int compareValue = CardOperations.compareTwoArrays(value1, value2);
-        Assert.assertEquals(2, compareValue);
+        Assert.assertEquals(-1, compareValue);
     }
 }

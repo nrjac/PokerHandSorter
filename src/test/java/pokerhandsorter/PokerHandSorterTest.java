@@ -16,7 +16,7 @@ public class PokerHandSorterTest {
     @Test
     public void testGetResultFromInputFile() {
         try {
-            String expectedOutput = "Player1:256\n" + "Player2:244";
+            String expectedOutput = "Player1:264\n" + "Player2:236";
             String output = PokerHandSorter.getResultFromInputFile();
             Assert.assertEquals(expectedOutput, output);
 
@@ -28,7 +28,7 @@ public class PokerHandSorterTest {
     @Test
     public void testWriteToFile() throws FileNotFoundException {
         String output = "Player1" +
-                ":256\n" + "Player2:244";
+                ":264\n" + "Player2:236";
         String output2 = PokerHandSorter.getResultFromInputFile();
         PokerHandSorter.writeOutputToFile(output2);
         Scanner inFile = new Scanner(new FileReader("src\\main\\resources\\output\\poker-hands-output.txt"));
